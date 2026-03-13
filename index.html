@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZAC — Copywriter</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#05020a;--bg2:#0a0514;--fg:#f0ecff;
+  --neon-purple:#c840ff;--neon-pink:#ff2eaa;--neon-green:#00ff9d;--neon-cyan:#00f0ff;
+  --glow-purple:0 0 8px #c840ff,0 0 24px rgba(200,64,255,0.5),0 0 80px rgba(200,64,255,0.2);
+  --glow-green:0 0 8px #00ff9d,0 0 24px rgba(0,255,157,0.5),0 0 80px rgba(0,255,157,0.2);
+  --glow-pink:0 0 8px #ff2eaa,0 0 24px rgba(255,46,170,0.5),0 0 80px rgba(255,46,170,0.2);
+  --glow-cyan:0 0 8px #00f0ff,0 0 24px rgba(0,240,255,0.5),0 0 80px rgba(0,240,255,0.2);
+  --serif:'Playfair Display',Georgia,serif;--sans:'Outfit',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scrollbar-width:thin;scrollbar-color:var(--neon-purple) var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);overflow-x:hidden;cursor:none}
+
+.cursor{position:fixed;width:24px;height:24px;border:2px solid var(--neon-purple);border-radius:50%;pointer-events:none;z-index:10000;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:width .35s cubic-bezier(.23,1,.32,1),height .35s cubic-bezier(.23,1,.32,1),background .35s,border-color .35s,box-shadow .35s}
+.cursor.hover{width:64px;height:64px;background:rgba(200,64,255,0.1);border-color:var(--neon-green);box-shadow:var(--glow-green)}
+.cursor-dot{position:fixed;width:6px;height:6px;background:var(--neon-green);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);box-shadow:0 0 6px var(--neon-green)}
+
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:9998;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grainShift .5s steps(1) infinite}
+@keyframes grainShift{0%{transform:translate(0)}25%{transform:translate(-2%,3%)}50%{transform:translate(1%,-2%)}75%{transform:translate(-3%,1%)}}
+
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0}
+.orb{position:absolute;border-radius:50%;filter:blur(130px);will-change:transform}
+.orb-1{width:600px;height:600px;background:var(--neon-purple);opacity:.14;top:-8%;left:-8%}
+.orb-2{width:500px;height:500px;background:var(--neon-green);opacity:.1;bottom:-8%;right:-8%}
+.orb-3{width:450px;height:450px;background:var(--neon-pink);opacity:.08;top:45%;left:45%;transform:translate(-50%,-50%)}
+.orb-4{width:350px;height:350px;background:var(--neon-cyan);opacity:.06;top:20%;right:10%}
+
+nav{position:fixed;top:0;left:0;width:100%;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;z-index:1000;background:rgba(5,2,10,0.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(200,64,255,0.08);transform:translateY(0);transition:transform .4s cubic-bezier(.23,1,.32,1)}
+nav.hidden{transform:translateY(-100%)}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;font-weight:900;color:var(--fg);text-decoration:none;letter-spacing:-.5px}
+.nav-logo span{color:var(--neon-green);text-shadow:0 0 12px rgba(0,255,157,0.6)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{color:var(--fg);text-decoration:none;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:2.5px;position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--neon-green);box-shadow:0 0 8px var(--neon-green);transition:width .5s cubic-bezier(.23,1,.32,1)}
+.nav-links a:hover::after{width:100%}
+
+#hero{min-height:100vh;min-height:100svh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 48px 60px}
+.circuit-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(5,2,10,0.3) 0%,rgba(5,2,10,0.75) 70%,rgba(5,2,10,0.95) 100%);pointer-events:none}
+.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.hero-bg-text{position:absolute;font-family:var(--serif);font-size:clamp(12rem,22vw,30rem);font-weight:900;font-style:italic;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(200,64,255,0.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;z-index:1}
+.hero-label{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:5px;color:var(--neon-green);text-shadow:0 0 20px rgba(0,255,157,0.5);margin-bottom:28px;overflow:hidden}
+.hero-label span{display:inline-block}
+.hero-title{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,5.8rem);line-height:1.1;font-weight:900;margin-bottom:24px;max-width:900px}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .line-inner{display:inline-block;transform:translateY(120%)}
+.hero-title em{font-style:italic;background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink),var(--neon-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 16px rgba(200,64,255,0.4))}
+.hero-desc{max-width:520px;font-size:1.05rem;line-height:1.7;color:rgba(240,236,255,0.6);margin-bottom:32px;font-weight:300;opacity:0}
+.hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;opacity:0}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:2px;text-decoration:none;border:none;cursor:none;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.btn-primary{background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink));color:#fff;box-shadow:0 0 20px rgba(200,64,255,0.3)}
+.btn-primary:hover{transform:scale(1.05);box-shadow:var(--glow-purple)}
+.btn-outline{background:transparent;border:1px solid var(--neon-cyan);color:var(--neon-cyan);text-shadow:0 0 8px rgba(0,240,255,0.3)}
+.btn-outline:hover{background:var(--neon-cyan);color:var(--bg);box-shadow:var(--glow-cyan);transform:scale(1.05)}
+
+.scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;z-index:2}
+.scroll-cue span{font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,0.2)}
+.scroll-cue-line{width:1px;height:36px;background:rgba(255,255,255,0.08);position:relative;overflow:hidden}
+.scroll-cue-line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--neon-green);box-shadow:0 0 8px var(--neon-green);animation:scrollDown 2s ease-in-out infinite}
+@keyframes scrollDown{0%{top:-100%}50%{top:0}100%{top:100%}}
+
+.full-section{min-height:100vh;min-height:100svh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:80px 48px}
+
+.marquee-section{width:100%;padding:28px 0;overflow:hidden;border-top:1px solid rgba(200,64,255,0.12);border-bottom:1px solid rgba(200,64,255,0.12);background:rgba(200,64,255,0.02)}
+.marquee-track{display:flex;gap:48px;white-space:nowrap;will-change:transform}
+.marquee-item{font-family:var(--serif);font-size:1.5rem;font-style:italic;color:var(--neon-green);opacity:0.5;flex-shrink:0;text-shadow:0 0 12px rgba(0,255,157,0.3)}
+.marquee-dot{display:inline-block;width:6px;height:6px;background:var(--neon-green);border-radius:50%;margin:0 24px;vertical-align:middle;box-shadow:0 0 8px var(--neon-green)}
+
+.sec-label{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:4px;color:var(--neon-green);text-shadow:0 0 16px rgba(0,255,157,0.5);margin-bottom:20px}
+.sec-title{font-family:var(--serif);font-size:clamp(2.2rem,5vw,4.8rem);font-weight:900;line-height:1.1;margin-bottom:20px}
+.sec-title em{font-style:italic;background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink),var(--neon-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 12px rgba(200,64,255,0.3))}
+.sec-desc{max-width:580px;color:rgba(240,236,255,0.55);line-height:1.7;font-weight:300;font-size:1rem}
+
+#work-section{background:var(--bg2)}
+.work-scroll-container{width:100%;max-width:1200px;margin-top:48px}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;width:100%}
+.work-card{background:rgba(200,64,255,0.03);border:1px solid rgba(200,64,255,0.1);padding:40px 32px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;min-height:200px;transition:border-color .4s,box-shadow .4s;will-change:transform}
+.work-card::before{content:'';position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(200,64,255,0.12),transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
+.work-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--neon-purple),var(--neon-pink),var(--neon-cyan),var(--neon-green));transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.23,1,.32,1);box-shadow:0 0 12px var(--neon-purple),0 0 30px rgba(200,64,255,0.3)}
+.work-card:hover::before{opacity:1}.work-card:hover::after{transform:scaleX(1)}
+.work-card:hover{border-color:rgba(200,64,255,0.35);box-shadow:0 0 30px rgba(200,64,255,0.12),0 0 60px rgba(200,64,255,0.05),inset 0 0 30px rgba(200,64,255,0.03)}
+.work-card-num{font-family:var(--mono);font-size:.6rem;color:rgba(255,255,255,0.12);position:absolute;top:14px;right:18px}
+.work-card-type{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:2px;color:var(--neon-green);padding:4px 14px;border:1px solid rgba(0,255,157,0.25);width:fit-content;text-shadow:0 0 8px rgba(0,255,157,0.4);transition:all .3s}
+.work-card:hover .work-card-type{background:var(--neon-green);color:var(--bg);border-color:var(--neon-green);box-shadow:var(--glow-green);text-shadow:none}
+.work-card-title{font-family:var(--serif);font-size:1.4rem;font-weight:700;line-height:1.3;transition:all .3s}
+.work-card:hover .work-card-title{background:linear-gradient(135deg,#fff,var(--neon-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.work-card-arrow{position:absolute;bottom:18px;right:18px;width:34px;height:34px;border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--fg);transition:all .4s}
+.work-card:hover .work-card-arrow{background:var(--neon-purple);color:#fff;border-color:var(--neon-purple);box-shadow:var(--glow-purple);transform:translate(4px,-4px)}
+
+#portfolio-cta{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.portfolio-cta-box{border:1px solid rgba(200,64,255,0.12);padding:60px 48px;max-width:750px;width:100%;position:relative;overflow:hidden;background:radial-gradient(ellipse at center,rgba(200,64,255,0.04),transparent);transition:border-color .4s,box-shadow .4s}
+.portfolio-cta-box:hover{border-color:rgba(200,64,255,0.3);box-shadow:0 0 40px rgba(200,64,255,0.08)}
+.cta-icon{font-size:3rem;margin-bottom:24px;display:block;filter:drop-shadow(0 0 20px rgba(200,64,255,0.5))}
+
+#experience-section{background:var(--bg)}
+.exp-container{max-width:1100px;width:100%;margin-top:48px}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;text-align:left}
+.exp-item{padding:32px 0;border-top:1px solid rgba(200,64,255,0.08);position:relative}
+.exp-glow-line{position:absolute;top:-1px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--neon-purple),var(--neon-pink),var(--neon-green));box-shadow:0 0 12px var(--neon-purple)}
+.exp-role{font-family:var(--serif);font-size:1.4rem;font-weight:700;margin-bottom:4px}
+.exp-company{font-family:var(--mono);font-size:.7rem;color:var(--neon-green);text-transform:uppercase;letter-spacing:1.5px;text-shadow:0 0 10px rgba(0,255,157,0.4);display:block}
+.exp-date{font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,0.45);margin-top:8px;display:block}
+.exp-desc{color:rgba(240,236,255,0.55);line-height:1.7;margin-top:14px;font-size:.9rem;font-weight:300}
+
+.skills-group{margin-bottom:40px;text-align:left}
+.skills-label{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:3px;color:var(--neon-cyan);text-shadow:0 0 10px rgba(0,240,255,0.4);margin-bottom:14px}
+.skills-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{padding:7px 16px;border:1px solid rgba(200,64,255,0.15);font-family:var(--mono);font-size:.65rem;color:rgba(240,236,255,0.65);position:relative;overflow:hidden;transition:all .35s;cursor:none}
+.skill-tag::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:0;z-index:-1;transition:height .35s;background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink))}
+.skill-tag:hover::before{height:100%}
+.skill-tag:hover{color:#fff;border-color:var(--neon-purple);box-shadow:var(--glow-purple);transform:translateY(-2px)}
+
+#contact-section{background:var(--bg2)}
+.contact-container{max-width:1100px;width:100%;margin-top:48px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;text-align:left}
+.contact-left p{color:rgba(240,236,255,0.55);line-height:1.7;margin-bottom:32px;font-weight:300}
+.contact-link{display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--fg);padding:16px 0;border-bottom:1px solid rgba(200,64,255,0.06);transition:all .3s;font-size:.9rem}
+.contact-link:hover{padding-left:16px;color:var(--neon-green);text-shadow:0 0 10px rgba(0,255,157,0.3)}
+.contact-link-icon{width:40px;height:40px;border:1px solid rgba(200,64,255,0.12);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;flex-shrink:0;transition:all .3s}
+.contact-link:hover .contact-link-icon{border-color:var(--neon-green);box-shadow:var(--glow-green)}
+.contact-form{display:flex;flex-direction:column;gap:20px}
+.form-group label{font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.35);margin-bottom:6px;display:block}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:14px 0;background:transparent;border:none;border-bottom:1px solid rgba(200,64,255,0.1);color:var(--fg);font-family:var(--sans);font-size:1rem;outline:none;transition:border-color .4s,box-shadow .4s}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--neon-cyan);box-shadow:0 2px 20px rgba(0,240,255,0.12)}
+.form-group textarea{resize:none;height:90px}
+.form-group select{cursor:pointer}
+.form-group select option{background:var(--bg)}
+.submit-btn{align-self:flex-start;padding:16px 40px;background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink));color:#fff;border:none;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:2px;cursor:none;transition:transform .3s,box-shadow .3s;font-weight:500;box-shadow:0 0 20px rgba(200,64,255,0.25)}
+.submit-btn:hover{transform:scale(1.05);box-shadow:var(--glow-purple)}
+
+footer{padding:32px 48px;border-top:1px solid rgba(200,64,255,0.06);display:flex;justify-content:space-between;align-items:center;background:var(--bg)}
+footer p{font-family:var(--mono);font-size:.6rem;color:rgba(255,255,255,0.15);letter-spacing:1px}
+
+.neon-divider{width:100%;height:2px;position:relative;overflow:hidden;background:rgba(200,64,255,0.04);transform:scaleX(0)}
+.neon-divider::after{content:'';position:absolute;top:0;left:-30%;width:30%;height:100%;background:linear-gradient(90deg,transparent,var(--neon-purple),var(--neon-pink),var(--neon-cyan),var(--neon-green),transparent);animation:neonSlide 3s ease-in-out infinite}
+@keyframes neonSlide{0%{left:-30%}100%{left:100%}}
+
+.r{opacity:0;transform:translateY(40px)}
+.r-scale{opacity:0;transform:scale(.9) translateY(20px)}
+.r-left{opacity:0;transform:translateX(-60px)}
+.r-right{opacity:0;transform:translateX(60px)}
+.r-fade{opacity:0}
+
+@media(max-width:1200px){.hero-title{font-size:clamp(2.2rem,5vw,4.5rem)}}
+@media(max-width:900px){
+  nav{padding:14px 20px}.nav-links{display:none}
+  #hero{padding:80px 20px 40px}.hero-title{font-size:clamp(2rem,6vw,3rem)}.hero-desc{font-size:.95rem;margin-bottom:24px}
+  .full-section{padding:60px 20px}.work-grid{grid-template-columns:1fr}.exp-grid{grid-template-columns:1fr;gap:40px}.contact-grid{grid-template-columns:1fr;gap:40px}
+  .cursor,.cursor-dot{display:none}body{cursor:auto}.portfolio-cta-box{padding:40px 24px}.btn{padding:14px 28px;font-size:.65rem}
+}
+@media(max-width:480px){.hero-title{font-size:1.8rem}.sec-title{font-size:1.6rem}}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="grain"></div>
+<div class="orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div></div>
+
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo magnetic"><span>ZAC</span> / Copywriter</a>
+  <ul class="nav-links">
+    <li><a href="#work-section" class="magnetic">Work</a></li>
+    <li><a href="#portfolio-cta" class="magnetic">Full Portfolio</a></li>
+    <li><a href="#experience-section" class="magnetic">Experience</a></li>
+    <li><a href="#contact-section" class="magnetic">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas class="circuit-canvas" id="circuitCanvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-bg-text">WORDS</div>
+  <div class="hero-content">
+    <div class="hero-label"><span>Copywriter &mdash; Strategist &mdash; Storyteller</span></div>
+    <h1 class="hero-title">
+      <span class="line"><span class="line-inner">Turning scrollers</span></span>
+      <span class="line"><span class="line-inner">into <em>readers</em> and</span></span>
+      <span class="line"><span class="line-inner">readers into <em>customers.</em></span></span>
+    </h1>
+    <p class="hero-desc">I'm a copywriter who builds clear, strategic content that earns attention and drives action. This site is a window into my work, my writing style, and how I think about the craft.</p>
+    <div class="hero-cta-row">
+      <a href="#work-section" class="btn btn-primary magnetic">See Featured Work</a>
+      <a href="#contact-section" class="btn btn-outline magnetic">Request Full Portfolio</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><div class="scroll-cue-line"></div></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee1">
+    <span class="marquee-item">Brand Messaging<span class="marquee-dot"></span></span><span class="marquee-item">SEO Content<span class="marquee-dot"></span></span><span class="marquee-item">Landing Pages<span class="marquee-dot"></span></span><span class="marquee-item">Email Campaigns<span class="marquee-dot"></span></span><span class="marquee-item">Ad Copy<span class="marquee-dot"></span></span><span class="marquee-item">Content Strategy<span class="marquee-dot"></span></span><span class="marquee-item">Press Releases<span class="marquee-dot"></span></span><span class="marquee-item">Case Studies<span class="marquee-dot"></span></span><span class="marquee-item">Brand Messaging<span class="marquee-dot"></span></span><span class="marquee-item">SEO Content<span class="marquee-dot"></span></span><span class="marquee-item">Landing Pages<span class="marquee-dot"></span></span><span class="marquee-item">Email Campaigns<span class="marquee-dot"></span></span><span class="marquee-item">Ad Copy<span class="marquee-dot"></span></span><span class="marquee-item">Content Strategy<span class="marquee-dot"></span></span><span class="marquee-item">Press Releases<span class="marquee-dot"></span></span><span class="marquee-item">Case Studies<span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- WORK -->
+<section id="work-section" class="full-section" style="min-height:auto;padding-top:100px;padding-bottom:100px">
+  <canvas class="circuit-canvas" id="circuitCanvasWork"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content" style="width:100%">
+    <span class="sec-label r-fade">01 / Featured Work</span>
+    <h2 class="sec-title r-fade">Selected <em>writing</em> samples</h2>
+    <p class="sec-desc r-fade">A curated selection of pieces that represent how I think and write across different formats. My full archive is available upon request.</p>
+    <div class="work-scroll-container"><div class="work-grid">
+      <div class="work-card r-scale"><span class="work-card-num">001</span><span class="work-card-type">Short Blog</span><h3 class="work-card-title">Why Your Payment Flow Is Losing Customers</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">002</span><span class="work-card-type">Long Blog</span><h3 class="work-card-title">The Real Cost of Downtime in Cloud Infrastructure</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">003</span><span class="work-card-type">Website Copy</span><h3 class="work-card-title">NovaPay Homepage Rewrite</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">004</span><span class="work-card-type">Press Release</span><h3 class="work-card-title">Helix Health Announces Series A Funding</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">005</span><span class="work-card-type">Short Blog</span><h3 class="work-card-title">5 Product Page Mistakes Killing Your Conversions</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">006</span><span class="work-card-type">Long Blog</span><h3 class="work-card-title">What Small Businesses Get Wrong About IP Protection</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">007</span><span class="work-card-type">Website Copy</span><h3 class="work-card-title">Helix Health Full Site Messaging</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">008</span><span class="work-card-type">Case Study</span><h3 class="work-card-title">How CloudVault Cut Churn by 30% in 90 Days</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">009</span><span class="work-card-type">Short Blog</span><h3 class="work-card-title">The Homebuyer Checklist Nobody Talks About</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">010</span><span class="work-card-type">Long Blog</span><h3 class="work-card-title">Zero Trust Architecture: A Plain-English Guide</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">011</span><span class="work-card-type">Website Copy</span><h3 class="work-card-title">Atlas Legal Practice Area Pages</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">012</span><span class="work-card-type">Press Release</span><h3 class="work-card-title">NovaPay Expands to European Markets</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">013</span><span class="work-card-type">Short Blog</span><h3 class="work-card-title">Why Single-Origin Beans Are Worth the Price</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">014</span><span class="work-card-type">Long Blog</span><h3 class="work-card-title">How Subscription Fatigue Is Reshaping SaaS Pricing</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">015</span><span class="work-card-type">Website Copy</span><h3 class="work-card-title">Grounded Coffee Brand & Product Pages</h3><div class="work-card-arrow">&nearr;</div></div>
+      <div class="work-card r-scale"><span class="work-card-num">016</span><span class="work-card-type">Case Study</span><h3 class="work-card-title">How a Rebrand Doubled Inbound Leads for Vertex</h3><div class="work-card-arrow">&nearr;</div></div>
+    </div></div>
+  </div>
+</section>
+
+<div class="neon-divider"></div>
+
+<!-- PORTFOLIO CTA -->
+<section id="portfolio-cta" class="full-section">
+  <div class="portfolio-cta-box r-scale">
+    <span class="cta-icon">&#9776;</span>
+    <h2 class="sec-title" style="margin-bottom:16px">There's a lot <em>more</em> to see</h2>
+    <p class="sec-desc" style="margin:0 auto 32px">The pieces above are a curated sample. Over the years, I've written hundreds of additional articles, landing pages, email sequences, brand guides, and ad campaigns across industries.</p>
+    <a href="#contact-section" class="btn btn-primary magnetic">Request Full Portfolio</a>
+  </div>
+</section>
+
+<div class="neon-divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience-section" class="full-section" style="min-height:auto;padding-top:100px;padding-bottom:100px">
+  <span class="sec-label r-fade">02 / Experience</span>
+  <h2 class="sec-title r-fade">Experience & <em>skills</em></h2>
+  <div class="exp-container"><div class="exp-grid">
+    <div>
+      <div class="exp-item r-left"><div class="exp-glow-line"></div><h3 class="exp-role">Senior Copywriter</h3><span class="exp-company">Vertex Digital</span><span class="exp-date">2022 — Present</span><p class="exp-desc">Lead writer on web copy, brand messaging, and content strategy for B2B SaaS and fintech clients. Develop messaging frameworks and high-conversion landing pages.</p></div>
+      <div class="exp-item r-left"><div class="exp-glow-line"></div><h3 class="exp-role">Copywriter</h3><span class="exp-company">Clearpoint Agency</span><span class="exp-date">2020 — 2022</span><p class="exp-desc">Wrote blog content, ad copy, and email campaigns for e-commerce and health tech clients. Managed editorial calendars with SEO and paid media teams.</p></div>
+      <div class="exp-item r-left"><div class="exp-glow-line"></div><h3 class="exp-role">Junior Copywriter</h3><span class="exp-company">Bright Harbor Creative</span><span class="exp-date">2018 — 2020</span><p class="exp-desc">Produced website copy, social media content, and marketing collateral for small businesses and startups.</p></div>
+    </div>
+    <div>
+      <div class="skills-group r-right"><div class="skills-label">Core Skills</div><div class="skills-cloud"><span class="skill-tag">Website Copywriting</span><span class="skill-tag">SEO Content Writing</span><span class="skill-tag">Brand Messaging</span><span class="skill-tag">Email Campaigns</span><span class="skill-tag">Landing Pages</span><span class="skill-tag">Content Strategy</span><span class="skill-tag">Voice & Tone</span><span class="skill-tag">Ad Copy</span><span class="skill-tag">Editorial Planning</span><span class="skill-tag">Long-Form Articles</span><span class="skill-tag">Product Copy</span><span class="skill-tag">A/B Test Copywriting</span></div></div>
+      <div class="skills-group r-right"><div class="skills-label">Tools & Platforms</div><div class="skills-cloud"><span class="skill-tag">Google Docs</span><span class="skill-tag">Notion</span><span class="skill-tag">WordPress</span><span class="skill-tag">Webflow</span><span class="skill-tag">Figma</span><span class="skill-tag">Ahrefs</span><span class="skill-tag">SEMrush</span><span class="skill-tag">Mailchimp</span><span class="skill-tag">HubSpot</span><span class="skill-tag">Asana</span><span class="skill-tag">Slack</span><span class="skill-tag">Google Analytics</span></div></div>
+    </div>
+  </div></div>
+</section>
+
+<div class="neon-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact-section" class="full-section" style="min-height:auto;padding-top:100px;padding-bottom:100px">
+  <canvas class="circuit-canvas" id="circuitCanvasContact"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content" style="width:100%">
+    <span class="sec-label r-fade">03 / Contact</span>
+    <h2 class="sec-title r-fade">Let's build <em>something together.</em></h2>
+    <div class="contact-container" style="margin-top:48px"><div class="contact-grid">
+      <div class="contact-left r-left"><p>If you're hiring a copywriter or would like to see more of my work, I'd be glad to hear from you.</p><a href="mailto:zac@email.com" class="contact-link magnetic"><span class="contact-link-icon">@</span> zac@email.com</a><a href="#" class="contact-link magnetic"><span class="contact-link-icon">in</span> linkedin.com/in/yourprofile</a></div>
+      <div class="contact-form r-right"><div class="form-group"><label>Your Name</label><input type="text" placeholder="John Doe"></div><div class="form-group"><label>Email Address</label><input type="email" placeholder="john@company.com"></div><div class="form-group"><label>Reason for Reaching Out</label><select><option>Select one</option><option>Hiring inquiry</option><option>Request full portfolio</option><option>General question</option></select></div><div class="form-group"><label>Message</label><textarea placeholder="Tell me about your project..."></textarea></div><button class="submit-btn magnetic">Send Message</button></div>
+    </div></div>
+  </div>
+</section>
+
+<footer><p>&copy; 2026 ZAC &mdash; All rights reserved.</p><p style="color:var(--neon-purple);text-shadow:0 0 10px rgba(200,64,255,0.3)">Crafted with intention</p></footer>
+
+<script>
+// ============================================================
+// CIRCUIT BOARD CANVAS
+// ============================================================
+function createCircuitBoard(canvasId, parentId, seed){
+  var canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = 0, H = 0;
+
+  function resize(){
+    var parent = document.getElementById(parentId);
+    if(!parent) return;
+    W = canvas.width = parent.offsetWidth || 800;
+    H = canvas.height = parent.offsetHeight || 600;
+  }
+  resize();
+  window.addEventListener('resize', function(){ resize(); buildCircuit(); });
+
+  var seedVal = seed;
+  function rand(){ seedVal = (Math.sin(seedVal + 1) * 10000); seedVal = seedVal - Math.floor(seedVal); return Math.abs(seedVal); }
+
+  var GRID = 60, nodes = [], traces = [];
+
+  function buildCircuit(){
+    nodes = []; traces = [];
+    if(W < 10 || H < 10) return;
+    var cols = Math.ceil(W / GRID) + 2, rows = Math.ceil(H / GRID) + 2;
+    seedVal = seed; // reset seed for consistent layout
+    for(var r = 0; r < rows; r++){
+      for(var c = 0; c < cols; c++){
+        if(rand() > 0.55) continue;
+        var x = c * GRID + (rand() - 0.5) * GRID * 0.5;
+        var y = r * GRID + (rand() - 0.5) * GRID * 0.5;
+        var sz = 1.5 + rand() * 2.5, bright = 0.3 + rand() * 0.7;
+        var colors = ['0,240,255','200,64,255','0,255,157','255,160,40'];
+        var col = colors[Math.floor(rand() * colors.length)];
+        nodes.push({x:x,y:y,size:sz,bright:bright,col:col,pulse:rand()*Math.PI*2,speed:0.5+rand()*2});
+      }
+    }
+    for(var i = 0; i < nodes.length; i++){
+      var a = nodes[i];
+      for(var j = i + 1; j < nodes.length; j++){
+        var b = nodes[j];
+        var dx = Math.abs(a.x-b.x), dy = Math.abs(a.y-b.y);
+        var dist = Math.sqrt(dx*dx+dy*dy);
+        if(dist < GRID*2.2 && dist > GRID*0.4 && rand() > 0.55){
+          var mid = rand() > 0.5 ? [{x:b.x,y:a.y}] : [{x:a.x,y:b.y}];
+          traces.push({points:[a].concat(mid).concat([b]),col:a.col,width:0.5+rand()*0.8});
+        }
+      }
+    }
+  }
+  buildCircuit();
+
+  var pulses = [], MAX_PULSES = 35;
+  function spawnPulse(){
+    if(traces.length === 0) return;
+    var tr = traces[Math.floor(Math.random()*traces.length)];
+    pulses.push({trace:tr,progress:0,speed:40+Math.random()*80,reverse:Math.random()>0.5,col:tr.col});
+  }
+  for(var i = 0; i < MAX_PULSES; i++) spawnPulse();
+
+  function getPoint(trace, t){
+    var pts = trace.points, totalLen = 0, segs = [];
+    for(var i = 0; i < pts.length-1; i++){
+      var dx = pts[i+1].x-pts[i].x, dy = pts[i+1].y-pts[i].y;
+      var len = Math.sqrt(dx*dx+dy*dy); segs.push({len:len,i:i}); totalLen += len;
+    }
+    if(totalLen === 0) return {x:pts[0].x,y:pts[0].y};
+    var target = t * totalLen;
+    for(var s = 0; s < segs.length; s++){
+      if(target <= segs[s].len){var f=target/segs[s].len;return{x:pts[segs[s].i].x+(pts[segs[s].i+1].x-pts[segs[s].i].x)*f,y:pts[segs[s].i].y+(pts[segs[s].i+1].y-pts[segs[s].i].y)*f};}
+      target -= segs[s].len;
+    }
+    return {x:pts[pts.length-1].x,y:pts[pts.length-1].y};
+  }
+  function traceLen(trace){
+    var len=0;for(var i=0;i<trace.points.length-1;i++){var dx=trace.points[i+1].x-trace.points[i].x,dy=trace.points[i+1].y-trace.points[i].y;len+=Math.sqrt(dx*dx+dy*dy);}return len;
+  }
+
+  var lastTime = performance.now(), timeV = 0;
+
+  function draw(now){
+    requestAnimationFrame(draw);
+    var dt = Math.min((now-lastTime)/1000, 0.1); lastTime=now; timeV+=dt;
+    if(W<10||H<10) return;
+    // Skip if offscreen
+    var rect = canvas.getBoundingClientRect();
+    if(rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
+
+    ctx.clearRect(0,0,W,H);
+    // Traces
+    for(var i=0;i<traces.length;i++){
+      var tr=traces[i],pts=tr.points;
+      ctx.beginPath();ctx.strokeStyle='rgba('+tr.col+',0.08)';ctx.lineWidth=tr.width;
+      ctx.moveTo(pts[0].x,pts[0].y);for(var j=1;j<pts.length;j++)ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();
+    }
+    // Pulses
+    for(var i=pulses.length-1;i>=0;i--){
+      var p=pulses[i],tl=traceLen(p.trace);
+      if(tl<1){pulses.splice(i,1);spawnPulse();continue;}
+      p.progress+=(p.speed*dt)/tl;
+      if(p.progress>=1){p.progress-=1;if(Math.random()>0.5&&traces.length>0){p.trace=traces[Math.floor(Math.random()*traces.length)];p.col=p.trace.col;}}
+      var t=p.reverse?1-p.progress:p.progress;
+      var pos=getPoint(p.trace,t);
+      if(!isFinite(pos.x)||!isFinite(pos.y))continue;
+      var g=ctx.createRadialGradient(pos.x,pos.y,0,pos.x,pos.y,18);
+      g.addColorStop(0,'rgba('+p.col+',0.6)');g.addColorStop(0.4,'rgba('+p.col+',0.15)');g.addColorStop(1,'rgba('+p.col+',0)');
+      ctx.fillStyle=g;ctx.fillRect(pos.x-18,pos.y-18,36,36);
+      ctx.beginPath();ctx.arc(pos.x,pos.y,2,0,Math.PI*2);ctx.fillStyle='rgba('+p.col+',0.9)';ctx.fill();
+    }
+    // Nodes
+    for(var i=0;i<nodes.length;i++){
+      var n=nodes[i];
+      var pulse=Math.sin(timeV*n.speed+n.pulse)*0.5+0.5;
+      var alpha=0.15+pulse*n.bright*0.6,r=n.size+pulse*2;
+      if(r<0.1)continue;
+      var g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,Math.max(r*4,1));
+      g.addColorStop(0,'rgba('+n.col+','+(alpha*0.6)+')');g.addColorStop(1,'rgba('+n.col+',0)');
+      ctx.fillStyle=g;ctx.fillRect(n.x-r*4,n.y-r*4,r*8,r*8);
+      ctx.beginPath();ctx.arc(n.x,n.y,r*0.6,0,Math.PI*2);
+      ctx.fillStyle='rgba('+n.col+','+(0.4+pulse*0.5)+')';ctx.fill();
+    }
+  }
+  // Delay start slightly so section has time to layout
+  setTimeout(function(){ resize(); buildCircuit(); requestAnimationFrame(draw); }, 200);
+}
+
+// ============================================================
+// GSAP + UI — NO LOADER, runs immediately
+// ============================================================
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+// Cursor
+var cursor=document.getElementById('cursor'),cursorDot=document.getElementById('cursorDot');
+var mxx=0,myy=0,cxx=0,cyy=0,dxx=0,dyy=0;
+document.addEventListener('mousemove',function(e){mxx=e.clientX;myy=e.clientY;});
+(function ac(){cxx+=(mxx-cxx)*.1;cyy+=(myy-cyy)*.1;dxx+=(mxx-dxx)*.22;dyy+=(myy-dyy)*.22;cursor.style.left=cxx+'px';cursor.style.top=cyy+'px';cursorDot.style.left=dxx+'px';cursorDot.style.top=dyy+'px';requestAnimationFrame(ac);})();
+document.querySelectorAll('a,button,.work-card,.skill-tag,.magnetic').forEach(function(el){el.addEventListener('mouseenter',function(){cursor.classList.add('hover');});el.addEventListener('mouseleave',function(){cursor.classList.remove('hover');});});
+
+// Magnetic
+document.querySelectorAll('.magnetic').forEach(function(el){
+  el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.3,y:(e.clientY-r.top-r.height/2)*.3,duration:.4,ease:'power2.out'});});
+  el.addEventListener('mouseleave',function(){gsap.to(el,{x:0,y:0,duration:.7,ease:'elastic.out(1,0.3)'});});
+});
+
+// Smooth nav scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(l.getAttribute('href'));if(t)gsap.to(window,{scrollTo:{y:t,offsetY:0},duration:1.2,ease:'power3.inOut'});});});
+
+// Nav hide/show
+var lastSY=0,navHid=false,navEl=document.getElementById('mainNav'),heroEl=document.getElementById('hero');
+window.addEventListener('scroll',function(){var cy=window.scrollY,hb=heroEl.offsetTop+heroEl.offsetHeight;if(cy<=hb-100){if(navHid){navEl.classList.remove('hidden');navHid=false;}}else{if(cy>lastSY&&!navHid){navEl.classList.add('hidden');navHid=true;}else if(cy<lastSY&&navHid){navEl.classList.remove('hidden');navHid=false;}}lastSY=cy;});
+
+// Work card tilt
+document.querySelectorAll('.work-card').forEach(function(card){
+  card.addEventListener('mousemove',function(e){var r=card.getBoundingClientRect();var px=((e.clientX-r.left)/r.width)*100,py=((e.clientY-r.top)/r.height)*100;card.style.setProperty('--mx',px+'%');card.style.setProperty('--my',py+'%');gsap.to(card,{rotateY:(px/100-.5)*14,rotateX:-(py/100-.5)*14,y:-8,duration:.35,ease:'power2.out',transformPerspective:800});});
+  card.addEventListener('mouseleave',function(){gsap.to(card,{rotateY:0,rotateX:0,y:0,duration:.6,ease:'elastic.out(1,0.4)'});});
+});
+
+// Marquee
+var marqX=0;
+(function am(){marqX-=1.2;var t=document.getElementById('marquee1');if(Math.abs(marqX)>=t.scrollWidth/2)marqX=0;t.style.transform='translateX('+marqX+'px)';requestAnimationFrame(am);})();
+var lsy2=window.scrollY;
+window.addEventListener('scroll',function(){var v=Math.abs(window.scrollY-lsy2);lsy2=window.scrollY;var t=document.getElementById('marquee1');gsap.to(t,{skewX:Math.min(v*.15,10),duration:.2,ease:'power2.out',onComplete:function(){gsap.to(t,{skewX:0,duration:.8,ease:'elastic.out(1,0.4)'});}});});
+
+// Orb parallax
+gsap.to('.orb-1',{y:-300,x:150,scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:2}});
+gsap.to('.orb-2',{y:-400,x:-120,scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:3}});
+gsap.to('.orb-3',{y:-200,rotation:90,scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:2}});
+gsap.to('.orb-4',{y:-250,x:-100,scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:2.5}});
+
+// ============================================================
+// ANIMATIONS — run directly, no loader dependency
+// ============================================================
+function startAnimations(){
+  // Hero entrance
+  var ht=gsap.timeline();
+  ht.from('.hero-label span',{y:40,opacity:0,duration:.8,ease:'power3.out'})
+    .to('.hero-title .line-inner',{y:0,duration:1.2,stagger:.15,ease:'power4.out'},'-=.4')
+    .to('.hero-desc',{opacity:1,y:0,duration:.8,ease:'power3.out'},'-=.6')
+    .to('.hero-cta-row',{opacity:1,y:0,duration:.8,ease:'power3.out'},'-=.5')
+    .to('.scroll-cue',{opacity:1,duration:.6},'-=.3');
+  gsap.to('.hero-bg-text',{xPercent:-15,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1}});
+
+  // Scroll reveals
+  gsap.utils.toArray('.r').forEach(function(el){gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});});
+  gsap.utils.toArray('.r-scale').forEach(function(el,i){gsap.fromTo(el,{opacity:0,scale:.9,y:20},{opacity:1,scale:1,y:0,duration:.8,ease:'back.out(1.2)',scrollTrigger:{trigger:el,start:'top 92%',toggleActions:'play none none none'},delay:(i%2)*.12});});
+  gsap.utils.toArray('.r-left').forEach(function(el){gsap.fromTo(el,{opacity:0,x:-60},{opacity:1,x:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});});
+  gsap.utils.toArray('.r-right').forEach(function(el){gsap.fromTo(el,{opacity:0,x:60},{opacity:1,x:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});});
+  gsap.utils.toArray('.r-fade').forEach(function(el){gsap.fromTo(el,{opacity:0},{opacity:1,duration:1,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});});
+
+  // Exp glow lines
+  document.querySelectorAll('.exp-item').forEach(function(item){ScrollTrigger.create({trigger:item,start:'top 80%',once:true,onEnter:function(){gsap.to(item.querySelector('.exp-glow-line'),{width:'100%',duration:1.2,ease:'power3.out'});}});});
+  // Skill tags
+  document.querySelectorAll('.skills-cloud').forEach(function(cloud){ScrollTrigger.create({trigger:cloud,start:'top 85%',once:true,onEnter:function(){gsap.fromTo(cloud.querySelectorAll('.skill-tag'),{opacity:0,y:20,scale:.8},{opacity:1,y:0,scale:1,duration:.5,stagger:.04,ease:'back.out(1.5)'});}});});
+  // Neon dividers
+  document.querySelectorAll('.neon-divider').forEach(function(d){ScrollTrigger.create({trigger:d,start:'top 92%',once:true,onEnter:function(){gsap.to(d,{scaleX:1,duration:1,ease:'power3.out'});}});});
+  // CTA float
+  gsap.to('.cta-icon',{y:-15,rotation:10,duration:2,ease:'sine.inOut',yoyo:true,repeat:-1});
+  // Contact form
+  ScrollTrigger.create({trigger:'.contact-form',start:'top 75%',once:true,onEnter:function(){
+    gsap.fromTo('.contact-form .form-group',{opacity:0,x:40},{opacity:1,x:0,duration:.7,stagger:.1,ease:'power3.out'});
+    gsap.fromTo('.submit-btn',{opacity:0,y:20},{opacity:1,y:0,duration:.6,delay:.5,ease:'power3.out'});
+  }});
+}
+
+// Start everything — with a tiny delay for layout
+setTimeout(startAnimations, 150);
+
+// Init circuit boards after DOM is ready
+createCircuitBoard('circuitCanvas', 'hero', 42);
+createCircuitBoard('circuitCanvasWork', 'work-section', 89);
+createCircuitBoard('circuitCanvasContact', 'contact-section', 137);
+</script>
+</body>
+</html>
