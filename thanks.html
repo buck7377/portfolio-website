@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Sent — ZAC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#05020a;--bg2:#0a0514;--fg:#f0ecff;
+  --neon-purple:#c840ff;--neon-pink:#ff2eaa;--neon-green:#00ff9d;--neon-cyan:#00f0ff;
+  --glow-purple:0 0 8px #c840ff,0 0 24px rgba(200,64,255,0.5),0 0 80px rgba(200,64,255,0.2);
+  --glow-green:0 0 8px #00ff9d,0 0 24px rgba(0,255,157,0.5),0 0 80px rgba(0,255,157,0.2);
+  --serif:'Playfair Display',Georgia,serif;--sans:'Outfit',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scrollbar-width:thin;scrollbar-color:var(--neon-purple) var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);overflow:hidden;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:9998;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");animation:grainShift .5s steps(1) infinite}
+@keyframes grainShift{0%{transform:translate(0)}25%{transform:translate(-2%,3%)}50%{transform:translate(1%,-2%)}75%{transform:translate(-3%,1%)}}
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0}
+.orb{position:absolute;border-radius:50%;filter:blur(130px)}
+.orb-1{width:600px;height:600px;background:var(--neon-purple);opacity:.14;top:-8%;left:-8%}
+.orb-2{width:500px;height:500px;background:var(--neon-green);opacity:.1;bottom:-8%;right:-8%}
+.orb-3{width:450px;height:450px;background:var(--neon-pink);opacity:.08;top:45%;left:45%;transform:translate(-50%,-50%)}
+.container{position:relative;z-index:1;text-align:center;padding:48px;max-width:650px}
+.check{font-size:4rem;margin-bottom:28px;display:block;filter:drop-shadow(0 0 20px rgba(0,255,157,0.5));animation:popIn .6s cubic-bezier(.23,1,.32,1) both}
+@keyframes popIn{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+.title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;margin-bottom:16px;animation:fadeUp .7s .2s cubic-bezier(.23,1,.32,1) both}
+.title em{font-style:italic;background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink),var(--neon-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 12px rgba(200,64,255,0.3))}
+.desc{color:rgba(240,236,255,0.55);line-height:1.7;font-weight:300;font-size:1rem;margin-bottom:36px;animation:fadeUp .7s .35s cubic-bezier(.23,1,.32,1) both}
+@keyframes fadeUp{0%{transform:translateY(20px);opacity:0}100%{transform:translateY(0);opacity:1}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:2px;text-decoration:none;border:none;cursor:pointer;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink));color:#fff;box-shadow:0 0 20px rgba(200,64,255,0.3);animation:fadeUp .7s .5s cubic-bezier(.23,1,.32,1) both}
+.btn:hover{transform:scale(1.05);box-shadow:var(--glow-purple)}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+<div class="container">
+  <span class="check">&#10003;</span>
+  <h1 class="title">Message <em>sent.</em></h1>
+  <p class="desc">Thanks for reaching out. I'll get back to you as soon as I can.</p>
+  <a href="https://zac-portfolio.com" class="btn">Back to the Website</a>
+</div>
+</body>
+</html>
