@@ -160,24 +160,7 @@ body::after{content:"";position:fixed;inset:0;background:repeating-linear-gradie
 </div>
 
 <script>
-const projects={
-  arbor:{t:"ARBOR GREEN TREE SERVICE",m:"SEO CASE STUDY // GEORGIA",b:"Full-funnel content strategy driving organic lead growth across multiple states."},
-  atl:{t:"ATL TREE WORK",m:"SEO CASE STUDY // ATLANTA, GA",b:"Ongoing blog content targeting competitive tree service keywords in the Atlanta metro."},
-  susan:{t:"SUSAN GIDDINGS CONSULTING",m:"BLOG CONTENT // CONSTRUCTION COACHING",b:"Long-form blog posts written from video transcripts covering construction business growth."},
-  kline:{t:"KLINE BROS LANDSCAPING",m:"WEB COPY // NJ",b:"SEO blog posts targeting pool fencing and landscaping keywords across northern New Jersey."},
-  tristate:{t:"TRI-STATE TREE SERVICE",m:"SEO BLOG POSTS // NY/NJ/CT",b:"Multi-location SEO blog series covering tree removal, trimming, and emergency services."},
-  eagerton:{t:"EAGERTON TREE SERVICE",m:"SEO BLOG POSTS // ALABAMA",b:"Targeted blog content for an Alabama tree service company."},
-  georgia:{t:"GEORGIA TREE COMPANY",m:"SEO BLOG POSTS // GEORGIA",b:"Regular SEO blog content covering the full range of tree care services."},
-  spartan:{t:"SPARTAN TREE SERVICE",m:"SEO BLOG POSTS // MICHIGAN",b:"Local SEO content for a Michigan tree service company."},
-  premier:{t:"PREMIER TREE CARE",m:"SEO BLOG POSTS // TEXAS",b:"SEO blog posts targeting tree care keywords in the Texas market."},
-  rpm:{t:"RPM SERVICES GROUP LLC",m:"AGENCY // MULTI-CLIENT",b:"High-volume content production for multiple local service business clients."},
-  alchemists:{t:"THE ALCHEMISTS",m:"AGENCY // MULTI-CLIENT",b:"SEO blog content and web copy for a roster of local service business clients."},
-  barone:{t:"BARONE'S TREE PROS",m:"WEB COPY // NJ",b:"Web copy and service page content for a New Jersey tree service company."},
-  champions:{t:"CHAMPIONS TREE PRESERVATION",m:"WEB COPY // TEXAS",b:"Service page content and SEO posts for a Texas tree preservation company."},
-  arbor2:{t:"ARBOR PLANT HEALTH CARE",m:"SEO CONTENT // MINNESOTA",b:"Blog and web content for a Minnesota arborist company."},
-  forestscapes:{t:"FORESTSCAPES",m:"SEO CONTENT // COLORADO",b:"SEO blog posts for a Colorado tree service company."},
-  greg:{t:"GREG SMITH TREE SERVICE",m:"SEO CONTENT // FLORIDA",b:"Targeted SEO content for a Florida tree service company."},
-};
+
 function modal(k){const p=projects[k];if(!p)return;document.getElementById("mt").textContent=p.t;document.getElementById("mm").textContent=p.m;document.getElementById("mb").textContent=p.b;document.getElementById("modal-bg").classList.add("open");}
 function closeModal(e){if(e.target===document.getElementById("modal-bg"))document.getElementById("modal-bg").classList.remove("open");}
 function tick(){const n=new Date();const el=document.getElementById("clock");if(el)el.textContent=[n.getHours(),n.getMinutes(),n.getSeconds()].map(v=>String(v).padStart(2,"0")).join(":");}
