@@ -1,0 +1,287 @@
+.site-shell {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-rows: var(--header-h) var(--tab-h) 1fr var(--footer-h);
+  padding: 0 var(--shell-pad);
+  background: var(--c-outer);
+}
+
+/* ---------- header ---------- */
+
+.shell-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-align: left;
+  letter-spacing: 0.04em;
+}
+
+.brand strong {
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.brand span {
+  font-size: var(--fs-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-ink-soft);
+}
+
+.utility-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: var(--fs-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.utility-nav a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--c-ink);
+  padding-bottom: 2px;
+}
+
+/* ---------- folder tabs ---------- */
+
+.folder-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.folder-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* The tab is drawn as an outlined shape: the element itself is the 1px edge
+   colour, and an inset pseudo-element carries the fill. The fill runs past
+   the bottom so no line is drawn where the tab meets its folder — tab and
+   folder read as one continuous outline. */
+.folder-tab {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 86px;
+  height: calc(var(--tab-h) - 6px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px 0 28px;
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--c-ink);
+  background: var(--tab-edge, var(--c-ink));
+  clip-path: polygon(0 100%, 0 32%, 8px 0, calc(100% - 14px) 0, 100% 60%, 100% 100%);
+  transition: height 0.18s ease, filter 0.18s ease;
+  white-space: nowrap;
+  z-index: var(--tab-z, 0);
+}
+
+/* each tab overlaps its neighbour just enough to close the gap; the label's
+   left padding keeps it clear of the seam */
+.folder-tab + .folder-tab {
+  margin-left: -24px;
+}
+
+
+.folder-tab::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 1px;
+  bottom: 0;
+  background: var(--tab-bg, var(--c-offwhite));
+  clip-path: polygon(0 100%, 0 32%, 8px 0, calc(100% - 14px) 0, 100% 60%, 100% 100%);
+}
+
+.folder-tab > span {
+  position: relative;
+  z-index: 1;
+}
+
+.folder-tab:not(.is-active) {
+  filter: brightness(0.94) saturate(0.9);
+}
+
+.folder-tab:hover {
+  height: calc(var(--tab-h) - 2px);
+}
+
+/* hover only raises the tab — it keeps its place in the stack until it is
+   actually selected */
+.folder-tab.is-active {
+  height: var(--tab-h);
+  filter: none;
+  z-index: 20;
+}
+
+/* the dark folder keeps the same ink outline as the rest of the stack — a
+   light edge would clash against the sand background */
+.folder-tab.theme-dark {
+  color: var(--c-charcoal-ink);
+}
+
+.folder-tab:focus-visible {
+  outline-offset: -3px;
+}
+
+/* ---------- stage window ---------- */
+
+.stage-window {
+  position: relative;
+  min-height: 0;
+}
+
+/* ---------- footer ---------- */
+
+.shell-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+}
+
+.shell-footer a {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+/* ---------- scroll cue ---------- */
+
+/* sits inside the rotating panel's border, clear of every edge */
+.scroll-cue {
+  position: fixed;
+  right: calc(var(--shell-pad) + var(--panel-inset) + var(--face-pad));
+  bottom: calc(var(--footer-h) + var(--panel-inset) + 22px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity 0.6s ease;
+}
+
+.scroll-cue .cue-circle {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--c-ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.scroll-cue .cue-arrow {
+  display: block;
+  font-size: 17px;
+  line-height: 1;
+  animation: cue-nudge 2.2s ease-in-out infinite;
+}
+
+@keyframes cue-nudge {
+  0%,
+  100% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+.scroll-cue.on-dark {
+  color: var(--c-charcoal-ink);
+}
+
+.scroll-cue.on-dark .cue-circle {
+  border-color: currentColor;
+}
+
+.scroll-cue.is-unavailable {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-cue.is-hidden .cue-label {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* ---------- face progress dots ---------- */
+
+.face-progress {
+  position: fixed;
+  right: calc(var(--shell-pad) + 2px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 5;
+}
+
+.face-progress button {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--c-ink);
+  border-radius: 50%;
+  padding: 0;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+
+.face-progress button.is-active {
+  background: var(--c-accent);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --header-h: 46px;
+    --tab-h: 36px;
+    --footer-h: 30px;
+  }
+
+  .folder-tab {
+    flex: 0 0 auto;
+    min-width: 0;
+    padding: 0 10px 0 26px;
+  }
+
+  .folder-tab + .folder-tab {
+    margin-left: -22px;
+  }
+
+    .face-progress {
+    display: none;
+  }
+
+  .utility-nav .nav-loc {
+    display: none;
+  }
+
+  .scroll-cue {
+    bottom: calc(var(--footer-h) + 8px);
+  }
+}

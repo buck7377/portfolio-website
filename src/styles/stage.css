@@ -1,0 +1,86 @@
+/**
+ * The folder itself is stationary: a coloured sheet with a 1px outline whose
+ * top edge breaks where the active tab joins it (gap positions come from the
+ * live tab rect — see folderGap.ts). Nothing here ever rotates.
+ */
+.story-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background-color: var(--folder-bg, var(--c-offwhite));
+  /* top edge painted as a stripe with a window cut out for the tab, drawn on
+     the border box so it lands exactly on the edge line */
+  background-image: linear-gradient(
+    to right,
+    var(--rule-color, var(--c-ink)) 0 var(--tab-gap-start, 0px),
+    transparent var(--tab-gap-start, 0px) var(--tab-gap-end, 0px),
+    var(--rule-color, var(--c-ink)) var(--tab-gap-end, 0px) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-origin: border-box;
+  background-position: 0 0;
+  border: 1px solid var(--rule-color, var(--c-ink));
+  border-top-color: transparent;
+}
+
+/**
+ * The panel: an inset window inside the folder. Only what lives in here has
+ * perspective, so scrolling turns a floating bordered rectangle through the
+ * folder rather than turning the folder itself.
+ */
+.story-panel {
+  position: absolute;
+  inset: var(--panel-inset);
+  overflow: hidden;
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+}
+
+/* The rotating box. Its transform is owned entirely by GSAP:
+   translateZ(-radius) rotateX(angle). */
+.rotor {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+/* One face of the box — the floating rectangle. Positioned in 3D via GSAP:
+   rotateX(faceAngle) translateZ(radius). Opaque, so faces never show through
+   one another mid-turn. */
+.face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  background-color: var(--page-bg, var(--c-offwhite));
+  border: 1px solid var(--rule-color, var(--c-ink));
+  overflow: hidden;
+}
+
+.face[data-theme="dark"] {
+  color: var(--c-charcoal-ink);
+  --rule-color: rgba(198, 198, 208, 0.85);
+  --meta-color: rgba(198, 198, 208, 0.74);
+  --hover-accent: var(--c-accent);
+}
+
+.face[data-theme="light"] {
+  color: var(--c-ink);
+  --rule-color: var(--c-ink);
+  --meta-color: var(--c-meta);
+  --hover-accent: var(--c-accent-warm);
+}
+
+/* Internal layers: structure (rules/grid) vs information. */
+.face-structure,
+.face-content {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.face-content {
+  pointer-events: auto;
+  padding: var(--face-pad);
+  display: grid;
+}

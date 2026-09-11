@@ -1,0 +1,53 @@
+/**
+ * ZT Nature — self-hosted. Three real weights ship (100 / 500 / 900), so the
+ * design's requests map onto them without faux-bolding: body text asks for
+ * 400 and resolves to Medium, everything 600+ resolves to Black.
+ */
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ZT Nature";
+  src: url("/fonts/ZTNature-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

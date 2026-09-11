@@ -1,0 +1,54 @@
+:root {
+  /* palette sampled from Color gradations.jpg */
+  --c-paper: #c6c6d0;
+  --c-teal: #104c64;
+  --c-salmon: #d59d80;
+  --c-copper: #c0754d;
+  --c-rust: #b6410f;
+  --c-night: #0d1d25;
+  --c-slate: var(--c-night);
+  --c-bark: var(--c-rust);
+  --c-desk: #8faec0;
+
+  /* roles */
+  --c-outer: var(--c-desk);
+  --c-ink: var(--c-night);
+  --c-ink-soft: #17313a;
+  --c-meta: #284650;
+  --c-offwhite: var(--c-paper);
+  --c-charcoal: var(--c-night);
+  --c-charcoal-ink: var(--c-paper);
+  --c-rule: var(--c-ink);
+  --c-accent: var(--c-salmon);
+  --c-accent-warm: var(--c-rust);
+
+  /* Folder surfaces: the image palette arranged from pale sheet to dark tab. */
+  --c-surface-portfolio: #e4b9a5;
+  --c-surface-experiments: var(--c-salmon);
+  --c-surface-about: var(--c-copper);
+  --c-surface-contact: var(--c-night);
+
+  /* type */
+  --font-sans: "ZT Nature", "Helvetica Neue", Arial, sans-serif;
+  --fs-hero: clamp(36px, 5.4vw, 92px);
+  --fs-display: clamp(34px, 5.6vw, 82px);
+  --fs-stat: clamp(40px, 6.4vw, 108px);
+  --fs-h2: clamp(24px, 3vw, 44px);
+  --fs-body: clamp(15px, 1.15vw, 18px);
+  --fs-meta: 11px;
+  --lh-display: 0.96;
+  --lh-body: 1.45;
+
+  /* shell geometry */
+  --shell-pad: clamp(12px, 2.2vw, 28px);
+  /* inset of the rotating panel inside the folder — shared with stage.css */
+  --panel-inset: clamp(16px, 2.2vw, 40px);
+  --face-pad: clamp(16px, 2.6vw, 44px);
+  --tab-h: 42px;
+  --header-h: 54px;
+  --footer-h: 34px;
+
+  /* motion */
+  --turn-duration: 0.52;
+  --ease-turn: cubic-bezier(0.65, 0, 0.35, 1);
+}
