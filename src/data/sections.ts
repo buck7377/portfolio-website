@@ -119,7 +119,7 @@ export const SECTIONS: Section[] = [
           layout: "bio",
           heading: "A little about me",
           paragraphs: [
-            "I'm Zachary Clark, a marketing copywriter based in Michigan. I studied Professional and Digital Writing at Oakland University and spent the last five years gaining experience in branding, web copy, SEO, agency content, technical writing and client-facing communications.",
+            "I'm Zachary Clark, a marketing copywriter based in Michigan. I earned a bachelor's degree in Professional and Digital Writing at Oakland University and spent the last five years gaining experience in branding, web copy, SEO, agency content, technical writing and client-facing communications.",
             "Over those five years, I've learned how much curiosity affects the quality of the work. I genuinely enjoy learning about new audiences, industries, and ways to write for different goals.",
             "I'd love to put my curiosity and research to work for your business by writing copy that speaks directly to the people you want to reach.",
           ],
