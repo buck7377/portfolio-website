@@ -1,5 +1,4 @@
 import type { GridLine, Section, StoryPage } from "./types";
-import { EXPERIMENTS } from "./experiments";
 import { CHAPTERS } from "./work";
 
 const h = (
@@ -56,53 +55,8 @@ export const SECTIONS: Section[] = [
   },
 
   {
-    id: "experiments",
-    num: "02",
-    label: "Experiments",
-    tabColor: "var(--c-surface-experiments)",
-    theme: "light",
-    pages: [
-      {
-        id: "experiments-index",
-        background: "var(--c-surface-experiments)",
-        theme: "light",
-        gridLines: [],
-        content: {
-          layout: "index",
-          heading: "Experiments",
-          intro:
-            "Working notes — things I'm working on and thinking about. Newest first.",
-          rows: EXPERIMENTS.map((entry, i) => ({
-            num: String(i + 1).padStart(2, "0"),
-            title: entry.title,
-            desc: entry.tags?.length
-              ? `${entry.date} · ${entry.tags.join(" / ")}`
-              : entry.date,
-          })),
-          rowLink: { section: "experiments", faceOffset: 1 },
-        },
-      },
-      ...EXPERIMENTS.map(
-        (entry): StoryPage => ({
-          id: `experiments-${entry.id}`,
-          background: "var(--c-surface-experiments)",
-          theme: "light",
-          gridLines: [v("72%", "40%", "34%", "top", 0.35)],
-          content: {
-            layout: "diary",
-            date: entry.date,
-            title: entry.title,
-            paragraphs: entry.paragraphs,
-            tags: entry.tags,
-          },
-        }),
-      ),
-    ],
-  },
-
-  {
     id: "about",
-    num: "03",
+    num: "02",
     label: "About",
     tabColor: "var(--c-surface-about)",
     theme: "light",
@@ -166,7 +120,7 @@ export const SECTIONS: Section[] = [
 
   {
     id: "contact",
-    num: "04",
+    num: "03",
     label: "Contact",
     tabColor: "var(--c-surface-contact)",
     theme: "dark",

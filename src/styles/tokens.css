@@ -24,7 +24,6 @@
 
   /* Folder surfaces: the image palette arranged from pale sheet to dark tab. */
   --c-surface-portfolio: #e4b9a5;
-  --c-surface-experiments: var(--c-salmon);
   --c-surface-about: var(--c-copper);
   --c-surface-contact: var(--c-night);
 

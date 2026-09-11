@@ -151,13 +151,3 @@ export interface Section {
   theme: Theme;
   pages: StoryPage[];
 }
-
-/** One experiments entry. Newest first in the array = newest first on the site. */
-export interface ExperimentEntry {
-  id: string;
-  /** display string, e.g. "09 Sep 2026" */
-  date: string;
-  title: string;
-  paragraphs: string[];
-  tags?: string[];
-}
