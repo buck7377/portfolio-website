@@ -13,6 +13,9 @@ import { attachGestures } from "./engine/gestures";
 import { applyFolderGap, measureFolderGap } from "./engine/folderGap";
 import { closeProject, initProjectViewer, openProjectById } from "./viewer/projectViewer";
 import { attachDebugPanel } from "./debug";
+import { initAnalytics, trackPageView } from "./analytics";
+
+initAnalytics();
 
 const app = document.getElementById("app")!;
 
@@ -113,6 +116,9 @@ const engine = new StageEngine(stageWindow, {
     }
     renderProgress(section.pages.length, pageIndex);
     updateHash(section.id, pageIndex);
+    trackPageView(
+      `${section.label}${pageIndex > 0 ? ` — page ${pageIndex + 1}` : ""} | Zachary Clark`,
+    );
     cue.classList.toggle("on-dark", section.theme === "dark");
     // nothing to turn to in a single-face section
     cue.classList.toggle("is-unavailable", section.pages.length < 2);

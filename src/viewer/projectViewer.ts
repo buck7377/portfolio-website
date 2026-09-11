@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { hasLocalPages, pagePath, pdfPath, WORK_BY_ID, type WorkProject } from "../data/work";
 import { prefersReducedMotion } from "../animation/motionConfig";
+import { track } from "../analytics";
 
 /**
  * In-site project reader. Opens over the presentation stage as a document
@@ -147,11 +148,20 @@ function buildOverlay(p: WorkProject): HTMLElement {
   return root;
 }
 
+function trackProjectView(p: WorkProject): void {
+  track("view_project", {
+    project_id: p.id,
+    project_title: p.title,
+    project_category: p.category,
+  });
+}
+
 function switchProject(id: string): void {
   if (!overlay || !host) return;
   const p = WORK_BY_ID[id];
   if (!p) return;
   currentId = id;
+  trackProjectView(p);
   const fresh = buildOverlay(p);
   overlay.replaceWith(fresh);
   overlay = fresh;
@@ -171,6 +181,7 @@ export function openProjectById(
   if (!p) return;
   currentId = id;
   context = ctx.length ? ctx : [id];
+  trackProjectView(p);
 
   overlay = buildOverlay(p);
   host.appendChild(overlay);
