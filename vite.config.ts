@@ -17,7 +17,7 @@ const slowEndpoint: Plugin = {
 };
 
 export default defineConfig({
-  base: "./",
+  base: "/",
   server: { port: 5173 },
   plugins: [slowEndpoint],
 });
