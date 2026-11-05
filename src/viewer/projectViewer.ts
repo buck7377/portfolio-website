@@ -95,7 +95,7 @@ function buildOverlay(p: WorkProject): HTMLElement {
       img.src = pagePath(p, i);
       img.alt = `${p.title} — page ${i} of ${p.pageCount}`;
       img.loading = i <= 2 ? "eager" : "lazy";
-      if (p.id === "web-plastikgas-investor-pitch-deck") pageBox.classList.add("pv-page--wide");
+      if (p.wide) pageBox.classList.add("pv-page--wide");
       pageBox.appendChild(img);
       pageBox.appendChild(el("figcaption", "pv-page-num", `${i} / ${p.pageCount}`));
       reader.appendChild(pageBox);

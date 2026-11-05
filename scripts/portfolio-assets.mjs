@@ -13,7 +13,7 @@ function parseWork() {
   const src = readFileSync(workTs, "utf8");
   const items = [];
   const re =
-    /pdfProject\("([^"]+)",\s*"([^"]+)",\s*"([^"]+)",\s*"([^"]+)",[\s\S]*?,\s*(\d+)\),/g;
+    /pdfProject\("([^"]+)",\s*"([^"]+)",\s*"([^"]+)",\s*"([^"]+)",[\s\S]*?,\s*(\d+)(?:,\s*\{[^}]*\})?\),/g;
 
   for (const m of src.matchAll(re)) {
     items.push({

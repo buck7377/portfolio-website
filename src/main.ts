@@ -152,7 +152,7 @@ document.addEventListener("open-project", (e) => {
   openProjectById(id, context, rect);
 });
 
-/* deep-link a project, e.g. /?project=seo-brain-fog-head-injury */
+/* deep-link a project, e.g. /?project=brain-fog-head-injury */
 const projectParam = boot.get("project");
 if (projectParam && WORK.some((p) => p.id === projectParam)) {
   openProjectById(
