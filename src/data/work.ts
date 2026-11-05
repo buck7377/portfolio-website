@@ -59,6 +59,8 @@ export const WORK: WorkProject[] = [
   pdfProject("radd-video-scripts", "12", "RADD: 30-Second Video Scripts", "Scripts & Speeches", "Four 30-second scripts for a credit union audit and compliance firm, each written to stay under 100 words for on-camera delivery.", ["script", "video", "compliance", "short-form"], "Credit union leaders and compliance teams", ["30-second video scripts"], 1),
   pdfProject("providers-edge-speech", "13", "Providers Edge: Short Pitch Speech", "Scripts & Speeches", "A short keynote pitch written in the voice of a healthcare media founder, built around client stories and a four-part partnership framework.", ["speech", "pitch", "healthcare", "executive-voice"], "Healthcare startup founders in a live audience", ["Speech", "Executive voice"], 2),
   pdfProject("healthcare-amplified-vsl-script", "14", "Healthcare Amplified: VSL Script", "Scripts & Speeches", "A video sales letter for a podcast growth program aimed at healthcare professionals, with scene directions for the production team.", ["script", "vsl", "healthcare", "sales"], "Healthcare professionals with or considering a podcast", ["Video sales letter script"], 2),
+  pdfProject("ace-tree-service-case-study", "15", "ACE Tree Service: Tree Removal and Replanting Case Study", "Case Studies", "A local service case study about a Birmingham homeowner who needed a hazardous oak removed but wanted a new one planted in its place, built around the client's own story.", ["case-study", "local-seo", "home-services", "storytelling"], "Homeowners in Birmingham, AL, considering tree removal", ["Case study", "Local service page"], 4),
+  pdfProject("otto-tree-service-case-study", "16", "Otto Tree Service: Emergency Maple Removal Case Study", "Case Studies", "A local service case study about an emergency removal of a failing maple in Auburn Hills, MI, written to show the crew's assessment, rigging plan, and cleanup.", ["case-study", "local-seo", "home-services", "emergency"], "Homeowners in Auburn Hills, MI, facing a hazardous tree", ["Case study", "Local service page"], 2),
 ];
 
 export const WORK_BY_ID: Record<string, WorkProject> = Object.fromEntries(
@@ -111,6 +113,12 @@ export const CHAPTERS: WorkChapter[] = [
     toc: "Video scripts, VSLs, and keynote pitches written in an executive's voice",
     groups: [{ ids: ["aptica-cybersecurity-script", "radd-video-scripts", "providers-edge-speech", "healthcare-amplified-vsl-script"] }],
   },
+  {
+    id: "case-studies",
+    titleLines: ["Case", "Studies"],
+    toc: "Project stories for local home-service businesses, written for local search",
+    groups: [{ ids: ["ace-tree-service-case-study", "otto-tree-service-case-study"] }],
+  },
 ];
 
 /** ?work= deep links land on a chapter face (face 0 is the index) */
@@ -125,6 +133,8 @@ export const CHAPTER_ROUTES: Record<string, number> = {
   speeches: 3,
   video: 3,
   social: 3,
+  "case-studies": 4,
+  cases: 4,
 };
 
 export function chapterProjectCount(ch: WorkChapter): number {

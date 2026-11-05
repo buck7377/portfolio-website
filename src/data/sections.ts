@@ -34,7 +34,7 @@ export const SECTIONS: Section[] = [
           layout: "work-toc",
           heading: "Work index",
           intro:
-            "Fourteen selected writing samples, organized by format: blog articles, website and brand copy, and scripts and speeches.",
+            "Sixteen selected writing samples, organized by format: blog articles, website and brand copy, scripts and speeches, and case studies.",
         },
       },
       ...CHAPTERS.map(
