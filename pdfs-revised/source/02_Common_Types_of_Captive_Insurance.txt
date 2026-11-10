@@ -1,0 +1,81 @@
+@kicker BLOG ARTICLE | FINANCIAL AND RISK MANAGEMENT | UNION RISK SERVICES
+
+@title Common Types of Captive Insurance
+
+Captive insurance lets businesses create or join an insurance structure that gives them more control over risk financing, claims strategy, and long-term costs.
+
+In this blog post, you'll learn about the most common types of captive insurance, how each model operates, and what each structure can offer your business. If you're ready to explore captive strategies built around your risk profile, contact Union Risk Services to learn more about our services.
+
+@h2 What Is Captive Insurance?
+
+If you aren't an insurance professional, understanding captive insurance may seem difficult at first, but the basic concept is simple: a business creates or joins an insurance company designed to cover its own risks.
+
+Instead of sending every premium dollar to a traditional insurer, the business uses a captive structure to finance certain risks in a more controlled way. Depending on the structure, the company can gain clearer insight into claims, make insurance costs more predictable, and keep more premium dollars when losses remain low.
+
+Captive insurance does not replace every standard policy in every situation. Many companies use it alongside traditional coverage as part of a broader risk strategy.
+
+@h2 Common Types of Captive Insurance
+
+Captive insurance is a broad term that describes several insurance structures businesses use to manage risk more strategically. The following sections describe common types of captive insurance.
+
+@h3 Single-Parent Captive Insurance
+
+A single-parent captive is a captive owned by one company and used to insure that company's own risks. The parent organization funds the captive, sets the underwriting parameters, and controls the claim process.
+
+This structure gives the owner maximum control over underwriting, coverage design, claims decisions, and surplus accumulation. Because no other businesses share the structure, the owner sets the rules.
+
+Single-parent captives work best for larger companies that pay substantial insurance premiums and have a stable loss history. Examples include manufacturers, trucking companies, construction firms, and large healthcare organizations.
+
+@h3 Group Captive Insurance
+
+A group captive is a captive owned by multiple unrelated businesses that share risk. Members pool resources and spread volatility while gaining far more control than a standard commercial policy provides.
+
+This model works well for midsize companies that want captive benefits without the capital commitment and administrative burden of building a standalone entity. You get access to underwriting results, coverage customization, and long-term cost stability without doing it alone.
+
+A group of independent contractors joining together to cover general liability and workers' compensation is one common example of how businesses put this structure to use.
+
+@h3 Association Captive Insurance
+
+An association captive is a captive formed by members of the same trade or professional association. Businesses in the same industry face similar exposures, which makes this model practical and efficient.
+
+The captive designs coverage around the specific risks that the industry produces rather than generic commercial terms. Medical groups, transportation associations, and construction associations have all built programs through this structure. The association connection also creates a natural framework for governance, safety initiatives, and risk sharing.
+
+@h3 Risk Retention Group
+
+A risk retention group is a liability insurance company owned by its members. The members share similar business activities or exposures, and the group structure lets them keep more of the premium that would otherwise go to a commercial carrier.
+
+This model focuses on liability risks rather than every line of coverage a business carries. Healthcare providers managing professional liability exposure and transportation firms dealing with commercial auto liability are two common examples.
+
+A properly formed risk retention group can write coverage across multiple states without seeking individual state approval for each jurisdiction, which removes a significant administrative burden for members operating in more than one state.
+
+@h3 Protected Cell Captive
+
+A protected cell captive lets separate participants operate inside individual cells within one larger captive organization. Each cell is legally segregated from the others, so one participant's losses don't affect another participant's assets.
+
+The startup burden is lower than forming a full standalone captive. Companies that want meaningful customization without the full complexity of building their own entity find this model practical.
+
+Businesses that want to test a captive arrangement before committing to a larger structure often use protected cells as a practical entry point into alternative risk financing.
+
+@h3 Agency Captive Insurance
+
+An agency captive is a captive connected to an insurance agency or broker structure. Agencies use this model to participate more directly in underwriting results and offer alternative risk solutions to qualified clients.
+
+When an agency places a client with a traditional insurance company, the insurer keeps the premium and profit after claims. An agency captive can allow the agency to share in those results when the program performs well.
+
+Structure details vary depending on program design and the lines of coverage involved, but the underlying goal remains the same: create a more direct connection between underwriting performance and financial outcome.
+
+@h2 How To Choose the Right Captive Structure
+
+Premium volume, claims history, risk tolerance, available capital, and administrative capacity all determine which structure fits a given business. Some businesses need full control over every decision. Others benefit more from sharing infrastructure and spreading volatility across a group.
+
+No structure is automatically better than another. What matters is whether the model fits the business using it. A feasibility review gives you the data to make that call based on actual numbers rather than assumptions.
+
+@h2 How Union Risk Services Helps Businesses Evaluate Captive Options
+
+Union Risk Services helps companies compare captive structures based on their financial and risk profile. We work through feasibility studies, program design, implementation, and ongoing management so you understand what each option produces before you commit to anything.
+
+The goal is to match your business with a structure that makes practical and financial sense for your specific situation.
+
+@h2 Call Union Risk Services To Schedule a Captive Insurance Consultation
+
+In this blog post, you learned about the different types of captive insurance. If you're ready to experience the benefits, contact Union Risk Services. When you call, we'll talk about your current premiums and how captive insurance could help your business reduce costs and gain more control over risk.

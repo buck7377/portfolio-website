@@ -1,0 +1,111 @@
+@kicker WEBSITE COPY | SEGMENTED FUNNEL PAGES | PULSEPOINT PATH
+
+@title PulsePoint Path Assessment Results Pages
+
+Results pages for a healthtech founder assessment. Each score tier gets its own landing page with messaging and next steps matched to the company's stage. Two of the five tiers are shown here.
+
+@h2 Tier 1: Beginner's Ascent
+
+@label HEADING
+
+@h3 Have the Basics Covered? Now Let's Take Your Healthtech Higher
+
+Congratulations on reaching the Beginner's Ascent phase! By taking the assessment, you've already accomplished more than most. This marks the start of your exciting journey towards becoming an Impact Trailblazer! A Beginner's Ascent score doesn't mean you haven't built something real. It means your next stage of growth calls for new strategies, and now is the perfect time to chart your path and realize your full potential.
+
+<b>Button:</b> Your Next Steps
+
+@label SUBHEADING
+
+@h3 Ready to Break Through Your Healthtech Revenue Plateau?
+
+You've worked hard to grow an impressive healthtech company. But after crossing the $2M revenue mark, your growth has stalled. Gaining traction takes more than just a great idea and a talented team. Navigating complex healthcare regulations, securing strategic investors, optimizing operations, and employing savvy marketing strategies all play a critical role in growing your business.
+
+At PulsePoint Path, we specialize in helping already successful healthtech companies like yours break through plateaus and advance to the next stage of growth. Our team of experts offers strategic guidance across all key areas, including:
+
+- Product-market fit and development
+
+- Data-driven marketing and positioning
+
+- Healthcare policy navigation and compliance
+
+- Fundraising strategy and introductions
+
+- Leadership coaching and team expansion
+
+@label SUBHEADING
+
+@h3 Your Next Steps
+
+<b>Step 1.</b> We recommend exploring our HealthTech Accelerator podcast, where our advisors share proven strategies with founders like you. Discover how to address gaps and propel your business forward.
+
+Your Beginner's Ascent score is not meant to discourage you; it's meant to inspire you. Use it to springboard your growth journey. Our team will be there every step of the way to help you set and achieve your boldest goals.
+
+<b>Button:</b> Listen to Strategies
+
+@label LEAD GENERATION FORM
+
+@h3 Keep Raising the Bar: Your Most Impactful Chapter Is Yet to Be Written
+
+<b>Step 2.</b> We recognize you've made significant progress already. Now let us help you build on your strong foundation to expedite your growth trajectory. Our experts can provide the missing pieces needed to elevate your business and make an even greater impact.
+
+We recommend exploring our next live HealthTech Expert Panel, where our advisors provide personalized insights to founders like you. Get your pressing questions answered and receive tailored advice to help guide your next steps. Sign up today and submit your questions so you can start mapping out your next phase.
+
+Don't have questions? That's OK! Come join our HealthTech Expert Panel and learn current strategies and solutions to help you keep your business growing.
+
+<b>Button:</b> Sign Up
+
+@rule
+
+@h2 Tier 3: Steady Impact
+
+@label HEADING
+
+@h3 You've Made an Impact. Now Let's Take It Further
+
+Congratulations on reaching the Steady Impact level! You've achieved above-average impact. Now let's work together to optimize, expand, and innovate. While celebrating your wins, you may face challenges sustaining excellence, expanding reach, forging partnerships, and fostering ongoing innovation. Specifically, you may be looking to focus on:
+
+- Striving for operational excellence through efficiencies and continuous improvement
+
+- Exploring new markets and verticals for growth opportunities
+
+- Forging key partnerships and strategic alliances
+
+- Fostering a culture of continuous innovation
+
+At PulsePoint Path, we specialize in helping Steady Impact companies like yours optimize operations, enter new markets, actualize untapped potential, and accelerate their trajectory. Let's unlock your next level of impact.
+
+@label SUBHEADING
+
+@h3 Transforming Healthcare Requires Constant Innovation
+
+You've worked hard to build an impressive healthtech company. You're making a steady impact and achieving above-average results overall. It's clear you have solid fundamentals in place. But if you stop and rest here, the things you've done to get this far won't necessarily take you further.
+
+Sustaining success requires continuously striving for operational excellence. It means actively expanding into new markets, forging strategic partnerships, and fostering a culture of innovation so steady impact today transforms into exceptional impact tomorrow.
+
+At PulsePoint Path, our team understands exactly what it takes to turn steady into stellar. We specialize in helping companies capitalize on their momentum and keep climbing.
+
+<b>Button:</b> Join the Founder Think Tank
+
+@label SUBHEADING
+
+@h3 Your Next Steps
+
+Wondering how to keep your winning momentum going strong? We're here to provide personalized support tailored to leaders like you who have achieved Steady Impact.
+
+First, consider joining our monthly Founder Think Tank. This exclusive collaboration and strategy session brings together founders, experts, and industry leaders to workshop ideas for reaching new heights. We limit each session to 50 participants to guarantee every voice receives ample attention and consideration.
+
+Your Steady Impact score proves you have an ambitious vision and drive to change healthcare. Let's work together to uncover your next history-making innovations.
+
+<b>Button:</b> Join the Founder Think Tank
+
+@label LEAD GENERATION FORM
+
+@h3 Let's Uncover Your Next Growth Opportunities
+
+You've done outstanding work building an impactful healthtech company so far. Now let's uncover what's next.
+
+We also invite you to apply for our elite business advancement program. This customized experience is designed to help companies at your level break new ground. We'll conduct interviews beforehand to make sure the strategies are relevant to your specific goals.
+
+The first step is to connect and assess your current business strengths and needs. Let's map out an ambitious trajectory for sustaining your winning streak and shattering growth goals.
+
+<b>Button:</b> Schedule a Consultation

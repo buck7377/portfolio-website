@@ -1,0 +1,89 @@
+@kicker VIDEO SCRIPT | EXECUTIVE VOICE | APTICA, LLC
+
+@title Cybersecurity Awareness Infomercial Script
+
+A slide-by-slide script written in the voice of Aptica's founder for a small business audience.
+
+@label SLIDE 1
+
+Did you know cybercrime is one of the biggest threats to small businesses today? It's not just large corporations being targeted anymore. Businesses like yours are at risk too. I talk to business owners every day, and many of them feel overwhelmed and unsure about how to protect themselves. That's why I'm here today, to cut through the noise, bust a few common myths, and share what actually works to keep your business safe.
+
+@label SLIDE 2
+
+Before we get into the myths, though, let's take a moment to talk about why cybersecurity matters. Good cybersecurity measures will protect your data, your finances, and the trust your customers place in you.
+
+I've seen way too many businesses learn this the hard way. A serious breach can disrupt operations, strain finances, and damage customer trust. But that doesn't have to be your story.
+
+So where do most cybersecurity problems actually come from? Let's take a closer look.
+
+@label SLIDE 3
+
+When I ask business owners about cybersecurity threats, they usually think about hackers in some far-off place. But actually, most security problems come from inside businesses. I'm talking about your employees, and not just the ones who are up to no good.
+
+Sometimes it's just someone making an honest mistake, like clicking the wrong link or using a weak password. This brings us to a myth I hear all the time...
+
+@label SLIDE 4
+
+<b>"My business is too small for hackers to care about." Trust me, size doesn't matter here. Small businesses get targeted too.</b>
+
+Why? Because attackers know larger companies have stronger security, they go for easier targets. But being small doesn't mean you're defenseless.
+
+@label SLIDE 5
+
+A lot of business owners think that having antivirus software means they're safe. I wish it were that simple. The truth is, you need several layers of protection:
+
+- Good antivirus software
+
+- Strong firewalls
+
+- Data encryption
+
+- Multi-factor authentication
+
+- Regular updates
+
+- Employee training One of my clients learned this the hard way. Despite investing thousands in top-of-the-line antivirus software, he was still blindsided by an attack. It wasn't until he implemented a comprehensive security strategy that he reached a truly secure position. That's what it takes to stay ahead of today's evolving threats.
+
+@label SLIDE 6
+
+If you're as old as I am, you probably remember those old scam emails with terrible spelling and weird requests. Well, phishing attacks have come a long way since then. These days, they're incredibly sophisticated. I've seen fake emails that look exactly like they're from your boss, your bank, or even your clients. And they're really good at creating a sense of urgency that makes people click without thinking.
+
+@label SLIDE 7
+
+Here's a big mistake I see quite often: businesses buying every security tool they can find, thinking more is better. But here's the thing... Having too many tools can actually create problems. Some tools might conflict with each other, and it gets really complicated for your team to manage everything. What you need is a solid strategy with the right tools for your specific situation. And that strategy starts with involving everyone in your organization.
+
+@label SLIDE 8
+
+Thinking cybersecurity is just IT's job is such a dangerous myth. I get it... it seems technical, so it must be IT's problem, right? But the truth is, everyone in your company plays a role in keeping things secure. From the CEO to the newest hire, everyone needs to understand the basics of security.
+
+@label SLIDE 9
+
+You know what's really risky? Trying to handle all your cybersecurity in-house. Look, even the best IT teams need help sometimes. The threats are constantly changing, and it's really hard to keep up with everything. There's nothing wrong with getting expert help. In fact, it's often the smartest thing you can do. Especially when so much of your data is already in the cloud...
+
+@label SLIDE 10
+
+Speaking of the cloud. A lot of people think that once their data is in the cloud, it's automatically safe. While cloud services are generally secure, you're still responsible for how your team uses them. Things like using weak passwords, sharing files incorrectly, or not setting up proper access controls can still put your data at risk. Weak passwords, in particular, lead to another common misconception.
+
+@label SLIDE 11
+
+I hear people say, "We use strong passwords, so we're safe... right?" That's a good start, but it's not enough. Cybercriminals today have incredibly advanced tools to crack passwords. That's why you need extra layers of protection, like multi-factor authentication. It might feel like an inconvenience at first, but it's one of the simplest and most effective ways to keep your accounts secure. And for those who think cybersecurity is too expensive, let's put that into perspective.
+
+@label SLIDE 12
+
+Recovering from a cyberattack can be costly. You could be facing lost revenue, a damaged reputation, and upset customers. The good news is that good security doesn't have to break the bank. There are affordable solutions for businesses of all sizes. But staying secure isn't a one-time effort... it's an ongoing process.
+
+@label SLIDE 13
+
+Cybersecurity isn't a "set it and forget it" thing. The threats keep changing, so your security needs to keep evolving too. It's like keeping up with any other part of your business; you need to stay current and keep improving.
+
+@label SLIDE 14
+
+A lot of businesses think that if they're compliant with regulations, they're secure. Being compliant is important, but it's just the minimum requirement. It's like having a driver's license... it means you know the basics, but it doesn't automatically make you a great driver. So how do you stay truly secure in such a challenging environment?
+
+@label SLIDE 15
+
+The risks can feel overwhelming, like they're coming from everywhere all at once. And the truth is... they kind of are. That's why you need a cybersecurity partner who takes the time to understand your business and works closely with you to create a plan that truly protects what matters most.
+
+When you partner with us, here's what happens: We identify your unique vulnerabilities, design a customized security plan, and implement the right solutions to keep your data, finances, and reputation safe.
+
+Cyber threats aren't slowing down, but with the right partner, you'll be ready for anything. Book your no-obligation consultation today, and let's secure your business... together!

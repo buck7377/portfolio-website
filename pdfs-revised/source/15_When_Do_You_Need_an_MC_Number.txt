@@ -1,0 +1,57 @@
+@kicker BLOG ARTICLE | TRANSPORTATION COMPLIANCE | FMCA FILINGS
+
+@title When Do You Need an MC Number?
+
+In this blog post, you'll learn the answer to the question, "When do you need an MC number?" You'll learn what an MC number is, how it differs from a USDOT number, and which businesses need to register for one.
+
+If you discover you need to register for an MC number after reading, or you still aren't sure, contact FMCA Filings for help with the MC number registration process.
+
+@h2 What Is an MC Number?
+
+An MC number gives a carrier permission from the Federal Motor Carrier Safety Administration (FMCSA) to run specific types of for-hire interstate operations. It defines what kind of work the company can perform and what cargo it can legally carry.
+
+The "MC" in MC number stands for motor carrier. People often use the term MC number when talking about FMCSA operating authority, though FMCSA may issue an MC, FF, or MX number depending on the type of authority a company needs.
+
+You can get an MC number without a truck, but you'll need a truck and proof of insurance before you receive full operating authority. FMCSA also has a waiting period before you can legally use that authority on the road.
+
+@h2 How Does an MC Number Differ From a USDOT Number?
+
+The main difference between USDOT and MC numbers comes down to identification versus permission. A USDOT number identifies the company. An MC number grants operating authority for regulated for-hire activity in interstate commerce.
+
+@h2 Which Businesses Need To Register for an MC Number?
+
+If you aren't a regulatory professional, you might have trouble answering the question, "When do you need an MC number?" because FMCSA requirements vary based on the type of business you run, the cargo you handle, and where your vehicles operate. The following sections describe who needs operating authority registration and why.
+
+@h3 For-Hire Carriers That Haul Regulated Freight Across State Lines
+
+For-hire transportation services generally need an MC number when they move regulated freight for payment across state lines. These interstate commerce carriers need operating authority because FMCSA uses it to define the type of transportation they can provide and the cargo they can legally haul.
+
+@h3 Passenger Carriers That Transport People Across State Lines
+
+Passenger carriers may need an MC number when they transport people for payment across state lines. This requirement can apply to bus companies, shuttle services, and other businesses that use commercial motor vehicles to carry passengers in interstate commerce.
+
+@h3 Household Goods Carriers
+
+Household goods carriers need the correct operating authority when they transport personal items for customers across state lines. These carriers handle belongings during moves, so FMCSA separates this authority from standard property carrier authority.
+
+@h3 Brokers and Freight Forwarders
+
+Brokers and freight forwarders often need FMCSA operating authority even when they don't haul freight themselves. Brokers arrange transportation between shippers and carriers, while freight forwarders take a more direct role in organizing shipments.
+
+@h2 Which Carriers Don't Need an MC Number?
+
+Some carriers need a USDOT number but don't need an MC number. This usually applies when the company doesn't provide regulated for-hire interstate transportation.
+
+Private carriers often fall into this category because they transport their own cargo instead of hauling freight for paying customers. For example, a private carrier that uses its own trucks to move products it owns, sells, or uses may need a USDOT number, but it typically doesn't need an MC number because it isn't transporting someone else's freight as a for-hire carrier.
+
+@h2 How FMCA Filings Helps You Remain Compliant
+
+FMCA Filings helps you understand which registration applies to your operation before you file. This matters because the wrong filing can delay your approval, create compliance problems, or leave your business without the authority it needs to legally run.
+
+If your company needs an MC number and starts operating without one, you risk fines, out-of-service orders, insurance issues, and lost loads. Shippers and brokers may also refuse to work with your company if your authority doesn't match the transportation services you provide.
+
+FMCA Filings simplifies the MC number registration process by catching common mistakes and walking you through the required steps. If you're unsure which authority your business needs, FMCA Filings can help you review your options and file with more confidence.
+
+@h2 Contact FMCA Filings for Help Registering for an MC Number
+
+In this blog post, you learned the answer to the question, "When do you need an MC number?" If you still aren't sure whether you need an MC number, or if you need help registering, contact FMCA Filings to speak with one of our agents using LiveChat.

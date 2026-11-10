@@ -1,0 +1,131 @@
+@kicker WEBSITE COPY | HOMEPAGE | HEALTHCARE AMPLIFIED
+
+@title Healthcare Amplified Homepage
+
+Full homepage copy for a community and membership platform for healthcare podcasters and content creators.
+
+@label HERO
+
+@h2 Create, Collaborate, Change: The Healthcare Amplified™ Way!
+
+Discover a community of like-minded individuals who are just as hungry for change in the healthcare industry as you are. Join us as we reshape the way healthcare professionals communicate by empowering content creators like you with the tools, knowledge, and support they need to drive innovation and equity in healthcare.
+
+<b>Button:</b> Learn More
+
+@rule
+
+@label SUMMIT SECTION
+
+@h2 Transform Your Career in Just One Day: Join Us at the Healthcare Podcasters Summit
+
+<b>A Comprehensive Agenda.</b> The Summit showcases expert discussions on eight transformative themes, from tackling social determinants for health equity to revolutionizing healthcare with personalized medicine. You're not just listening; you're becoming a part of a conversation that shapes the future of healthcare.
+
+<b>Earn CME Credits.</b> We know how vital Continuing Medical Education credits are for healthcare professionals. When you attend any of our sessions, you'll earn CME credits that will add both value and credentials to your career.
+
+<b>Network Like a Pro.</b> For our Platinum-level attendees, we're offering even more perks! Enjoy an exclusive cocktail networking hour where you can mix and mingle with speakers, thought leaders, and industry shapers.
+
+<b>Ready to Elevate Your Healthcare Knowledge?</b> Your search for actionable insights, reliable networking, and invaluable industry know-how ends here. The Healthcare Podcasters Summit is more than an event; it's a catalyst for your professional growth. Secure your spot today!
+
+<b>Button:</b> Join the Summit
+
+@rule
+
+@label LEARNING SECTION
+
+@h2 Equip Yourself With the Knowledge to Tackle Healthcare's Biggest Challenges
+
+<b>The Tools You Need.</b> You're not just another healthcare professional. You're someone with the ambition to revolutionize the status quo. But ambition needs direction, and direction needs knowledge. That's where we come in.
+
+<b>Get Informed and Transform!</b> Whether you're diving into the social determinants of health or exploring the nuances of value-based care, we offer a wealth of resources to guide you. Webinars, eBooks, expert interviews, and more are all at your fingertips. It's not just information; it's actionable insights tailored for impactful change.
+
+<b>Don't Walk the Path Alone.</b> The journey to transforming healthcare is challenging, but you don't have to go it alone. Join our community of like-minded professionals. Share experiences, trade best practices, and build relationships that will aid you in your mission.
+
+<b>Be the Change You Want to See.</b> If you're committed to redefining healthcare for the better, there's no better time than now to arm yourself with the knowledge you need. Get the information, build the connections, and be the change you've always wanted to see in the healthcare industry.
+
+<b>Button:</b> Learn More
+
+@rule
+
+@label MEMBERSHIP SECTION
+
+@h2 The Three Levels of Collective Membership
+
+@h3 Level 1: The Amplifier
+
+- <b>Marketing Software:</b> Take your healthcare messaging to the next level.
+
+- <b>Sponsor Support:</b> Secure funding with our exclusive network of sponsors to keep your creative endeavors alive.
+
+- <b>Guest Speaker Access:</b> Network with the leading voices in healthcare.
+
+- <b>Healthcare Summit Networking:</b> Connect with VIPs and like-minded professionals.
+
+- <b>Skill Enhancement:</b> Exclusive workshops to fine-tune your healthcare insights.
+
+@h3 Level 2: The Influencer
+
+- <b>Everything in Level 1:</b> Get all Amplifier perks, plus:
+
+- <b>CME Learning Platform:</b> Elevate your podcast to an educational asset within the Healthcare Amplified Network.
+
+- <b>Latest Medical Insights:</b> Stay updated; stay credible.
+
+- <b>Trust Building:</b> Cement your role as a healthcare authority.
+
+@h3 Level 3: The Visionary
+
+- <b>Everything in Level 2:</b> Get all Influencer perks, plus:
+
+- <b>Audio/Video Editing Help:</b> Focus on content, let us handle the polish.
+
+- <b>Social Media and SEO Boost:</b> Get your message out, loud and clear.
+
+- <b>Monetization Strategy:</b> Turn your voice into a profitable healthcare venture.
+
+- <b>Community Support:</b> Collaborate, co-create, and grow with like-minded experts.
+
+- <b>Public Speaking Opportunities:</b> Establish yourself as a healthcare thought leader.
+
+<b>Button:</b> Join the Collective
+
+@rule
+
+@label BENEFITS SECTION
+
+@h2 Join Our Movement of Empowered Healthcare Content Creators
+
+<b>Empowerment.</b> Amplify your voice: stand out from the crowd and make your content resonate with your audience. Create impactful change: be part of a movement reshaping the healthcare industry.
+
+<b>Community.</b> Collaborate with like-minded individuals: don't go it alone; we're here with you. Foster connections: build lasting relationships within the industry.
+
+<b>Growth.</b> Enhance your skills: learn how to create better content and start monetizing it. Achieve success in the digital world: navigate the complex online healthcare space with our expert guidance and 15 years of experience.
+
+<b>Diversity.</b> Celebrate various perspectives: we're proud of our diverse network of healthcare professionals. Your unique voice is welcome here. Inspire positive change: diverse narratives like yours are what drives healthcare change.
+
+<b>Innovation.</b> Stay ahead of the curve: be the first to embrace new strategies that'll impress and inspire your audience. Transform healthcare communication: lead the change with fresh ideas.
+
+@rule
+
+@label DIFFERENTIATOR SECTION
+
+@h2 Transform Healthcare Communication With Healthcare Amplified™
+
+As a healthcare creator, you have access to wisdom that can profoundly impact the quality of care patients receive. That is an extremely powerful position to be in, but having something to say simply isn't enough. To truly make a difference, you must find a way to break through and be heard.
+
+But in a market saturated with so much content, it can be tough to stand out and get noticed. In order to really make an impact, you need a vision, a community, and a tailored approach to communication that addresses the unique challenges of the healthcare space.
+
+That's where Healthcare Amplified™ comes in. We provide the community, education, and support creators like you need to amplify their voices and thrive. Healthcare Amplified™ is not just about spreading messages. It's about empowering creators and fostering collaboration between healthcare professionals who are driven to make an impact. This isn't just a trend; it's a movement.
+
+@rule
+
+@label FAQ
+
+<b>How can Healthcare Amplified help grow my audience and monetization?</b> We provide consistent high-quality sponsors, powerful monetization strategies, and social media amplification. We'll help you maximize your following and tap into new revenue streams.
+
+<b>How can you help with production and editing?</b> Our Visionary membership includes backend editing support to make sure your content creation workflow is smooth and headache-free. We'll handle the logistics so you can focus on creating.
+
+<b>Can you help me improve my skills and network?</b> Our annual summit connects you with top-tier industry leaders for insider knowledge and collaborations. Plus, our CME learning membership keeps your expertise sharp.
+
+<b>It's hard to stand out as a creator. How can you shine a spotlight on me?</b> We spotlight member creators through initiatives like our podcast highlight show. You'll get the visibility you need to grow your brand in the healthcare space.
+
+<b>Button:</b> Join the Collective
